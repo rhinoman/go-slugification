@@ -30,4 +30,10 @@ func TestSlugification(t *testing.T) {
 	if slugged != "1--3--5-2234x5420poopor264211dffme350" {
 		t.Errorf("slugged string is wrong: %v", slugged)
 	}
+	//String with tough accents
+	testString5 := "Árvíztűrő Tükörfúrógép"
+	slugged = slugification.Slugify(testString5)
+	if slugged != "arvizturo-tukorfurogep" {
+		t.Errorf("slugged string is wrong: %v", slugged)
+	}
 }
